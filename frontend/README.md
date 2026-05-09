@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Global Language Translator
 
-## Getting Started
+![App Screenshot](frontend/public/image.png)
 
-First, run the development server:
+A modern, responsive multilingual translator built with **Next.js**, **React**, **TypeScript**, and **Tailwind CSS**. This project is designed as a university final project for an AI course and provides a user-friendly interface to translate text between many languages using a backend API route inside the same Next.js app.
+
+## 🚀 Project Overview
+
+This application allows users to:
+- Enter source text and choose a language to translate from
+- Select a target language for translation
+- Swap languages easily
+- View translated output instantly
+- See source and target language status in the header
+
+The translator uses the `translate-google` package to perform translations on the server side through a Next.js API route.
+
+## 📁 Structure
+
+- `frontend/` — main application directory
+  - `src/app/` — Next.js app pages and layout
+  - `src/app/api/translate/route.ts` — translation API endpoint
+  - `public/` — static assets including `lt_logo.png` and `image.png`
+
+## 🛠️ Features
+
+- Responsive layout for mobile, tablet, and desktop
+- Modern glassmorphism UI with translucent cards and gradients
+- In-app translation API route (`POST /api/translate`)
+- Language swap button with auto-detect support
+- Favicon and site logo integration
+- Footer with project attribution
+
+## 💻 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd frontend
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ▶️ Run Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd frontend
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then open:
 
-## Learn More
+```text
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Build for Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cd frontend
+npm run build
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 API Usage
 
-## Deploy on Vercel
+The translation endpoint is available at:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+POST /api/translate
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Example request payload:
+
+```json
+{
+  "text": "Hello world",
+  "source_language": "en",
+  "target_language": "ur"
+}
+```
+
+## ☁️ Deployment
+
+This app can be deployed on Vercel, Netlify, or any hosting service that supports Next.js.
+
+For Vercel:
+1. Push the repository to GitHub.
+2. Import the repository into Vercel.
+3. Set the **Root Directory** to `frontend`.
+4. Deploy.
+
+No special environment variables are required for this setup.
+
+## 🎓 University Project
+
+This is a final project for the **4th semester AI course**.
+
+### Team Members
+- Muhammad Talha Tariq
+- Ali Haider Naseer
+- Hamza Ali Khan
